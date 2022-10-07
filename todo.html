@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main_box {
+            background: #ccfffa;
+            align-items: center;
+            width: 400px;
+            border: 4px solid red;
+            padding: 19px 23px;
+            border-radius: 33px;
+            margin: auto;
+        }
+
+        #input_div {
+            margin: auto;
+            width: 300px;
+        }
+
+        input {
+            width: 300px;
+            height: 20px;
+            margin: 9px 0px;
+        }
+
+        #buttons {
+            width: 300px;
+            margin: auto;
+        }
+
+        button {
+            font-size: 15px;
+            margin-left: 26px;
+            border: 3px solid blue;
+            border-radius: 6px;
+            background: #ffd5d5;
+            font-family: cursive;
+            margin-bottom: 30px;
+            ;
+        }
+
+        ol>li {
+            font-size: 25px;
+        }
+
+        #main_heading,
+        #todo_heading {
+            padding: 10px 0px;
+            font-size: 25px;
+            font-style: italic;
+            font-weight: bolder;
+        }
+    </style>
+    <Script>
+        var arr = "";
+        function update_list() {
+            let temp = document.querySelector('input').value;
+            // console.log(temp);
+            if (temp != "") {
+
+                arr = arr + `<li>${temp}</li>`;
+                document.getElementById('send').innerHTML = arr;
+                // console.log(arr);
+                document.querySelector('input').value = '';
+            }
+        }
+        function clear_list() {
+            arr = "";
+            document.getElementById('send').innerHTML = "<li>Your list is currently empty</li>";
+        }
+    </Script>
+</head>
+
+<body>
+    <div id="main_box">
+        <span id="main_heading">Enter things to add in your to do list</span>
+        <div id="input_div">
+            <input type="text" name="todo">
+        </div>
+        <div id="buttons">
+
+            <span class="button">
+                <button onclick="update_list()">ADD TO LIST</button>
+            </span>
+            <span class="button">
+                <button onclick="clear_list()">CLEAR LIST</button>
+            </span>
+        </div>
+        <div id="display">
+            <span id="todo_heading">YOUR TO DO LIST</span>
+            <ol id="send">
+                <li>Your list is currently empty</li>
+            </ol>
+        </div>
+    </div>
+</body>
+
+</html>
