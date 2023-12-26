@@ -12,5 +12,6 @@ def binsearch(arr, key):
             low = mid+1
     return -1
 
+#test
 arr = [1,2,3,4]
 print(binsearch(arr,4))
